@@ -7,6 +7,14 @@ interface PokemonPageProps {
   params: Promise<{ id: string }>;
 }
 
+// generar los 151 pokemons de forma statica
+export async function generateStaticParams() {
+
+  const static151Pokemons = Array.from({length:151}).map((_,idx)=>  `${idx + 1}`)
+
+  return static151Pokemons.map(id => ({id:id}))
+}
+
 // genera metadata dinamica
 export async function generateMetadata(
   { params }: PokemonPageProps,
