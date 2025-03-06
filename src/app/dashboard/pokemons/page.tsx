@@ -1,5 +1,5 @@
 import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
-
+// https://nextjs.org/docs/app/building-your-application/data-fetching/fetching documentacion para realizar peticiones
 
 export const metadata = {
  title: 'Pokémons',
