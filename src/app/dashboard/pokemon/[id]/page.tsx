@@ -24,7 +24,7 @@ export async function generateMetadata(
 
   try {
     const { name, id: idPokemon } = await getPokemon(id);
-    const description = (await parent).description;
+    const description = (await parent).description || `Pagina informativa del pokemón ${name}`;
 
     return {
       title: `#${idPokemon} - ${name}`,
@@ -36,15 +36,12 @@ export async function generateMetadata(
         title: "pagina del pokemon",
         description: "Pagina donde se referencia cada pokemon",
       };
+
+      return {
+        title: "pagina del pokemon",
+        description: "Pagina donde se referencia cada pokemon",
+      };
   }
-
-  const { name, id: idPokemon } = await getPokemon(id);
-  const description = (await parent).description;
-
-  return {
-    title: `#${idPokemon} - ${name}`,
-    description: description,
-  };
 }
 
 const getPokemon = async (id: string): Promise<Pokemon> => {
