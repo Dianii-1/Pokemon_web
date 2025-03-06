@@ -1,7 +1,5 @@
 import { CartCounter } from "@/shopping-cart";
 
-
-
 // no se puede colocar un metadata donde tengo un use client
 export const metadata = {
  title: 'Shopping cart',
