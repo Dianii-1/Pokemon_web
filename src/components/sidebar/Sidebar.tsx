@@ -1,28 +1,39 @@
 import Image from "next/image";
-import { IoBrowsersOutline, IoCalculator, IoDiscSharp, IoLogoReact } from "react-icons/io5";
+import {
+  IoBrowsersOutline,
+  IoCalculator,
+  IoDiscSharp,
+  IoHeartOutline,
+  IoLogoReact,
+} from "react-icons/io5";
 import { SidebarMenuItem } from "./SidebarMenuItem";
 
-
 const menuItems = [
-    {
-        path:'/dashboard/menu',
-        title:'Dashboard',
-        subtitle:'Visualización',
-        icon:<IoBrowsersOutline size={32}/>
-    },
-    {
-        path:'/dashboard/counter',
-        title:'Contador',
-        subtitle:'Contador client side',
-        icon:<IoCalculator size={32}/>
-    },
-    {
-      path:'/dashboard/pokemons',
-      title:'Pokemons',
-      subtitle:'Generación estática',
-      icon:<IoDiscSharp size={32}/>
-  }
-]
+  {
+    path: "/dashboard/menu",
+    title: "Dashboard",
+    subtitle: "Visualización",
+    icon: <IoBrowsersOutline size={32} />,
+  },
+  {
+    path: "/dashboard/counter",
+    title: "Contador",
+    subtitle: "Contador client side",
+    icon: <IoCalculator size={32} />,
+  },
+  {
+    path: "/dashboard/pokemons",
+    title: "Pokemons",
+    subtitle: "Generación estática",
+    icon: <IoDiscSharp size={32} />,
+  },
+  {
+    path: "/dashboard/favorites",
+    title: "Favoritos",
+    subtitle: "Global state",
+    icon: <IoHeartOutline size={32} />,
+  },
+];
 export const Sidebar = () => {
   return (
     <div
@@ -57,8 +68,8 @@ export const Sidebar = () => {
       </div>
 
       <div id="nav" className="w-full px-6">
-        {menuItems.map(item=>(
-            <SidebarMenuItem key={item.path} {...item}/>
+        {menuItems.map((item) => (
+          <SidebarMenuItem key={item.path} {...item} />
         ))}
       </div>
     </div>
