@@ -2,10 +2,14 @@
 // documentacion para iniciar con redux https://redux-toolkit.js.org/tutorials/quick-start
 import { configureStore } from "@reduxjs/toolkit";
 import counterReducer from "./counter/counterSlice";
+import pokemonsReducer from "./pokemons/pokemons";
 import { useDispatch, useSelector } from "react-redux";
 
 export const store = configureStore({
-  reducer: { count: counterReducer },
+  reducer: { 
+    count: counterReducer,
+    pokemons:pokemonsReducer
+  },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
